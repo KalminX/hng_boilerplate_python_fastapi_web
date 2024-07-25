@@ -67,4 +67,4 @@ def delete_current_user(
     db: Session = Depends(get_db),
     current_user: User = Depends(user_service.get_current_user)
 ):
-    db.user_service.delete(current_user)
+    db.user_service.delete(db, access_token=None)
